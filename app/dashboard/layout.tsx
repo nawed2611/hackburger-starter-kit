@@ -6,11 +6,10 @@ import { toast } from "sonner";
 import Navbar from "@/ui/navbar";
 
 export default function JournalLayout({ children }) {
-
   return (
-    <div className="flex flex-col items-center min-h-screen font-[inter]">
+    <div className="flex min-h-screen flex-col items-center font-[inter]">
       <Navbar />
-      <div className="w-full m-6 min-h-[85vh] flex">
+      <div className="m-6 flex min-h-[85vh] w-full">
         <Sidebar />
         <div className="w-5/6">{children}</div>
       </div>

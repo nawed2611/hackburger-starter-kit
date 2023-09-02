@@ -7,7 +7,14 @@ import {
 } from "@/ui/primitives/popover";
 import { useContext } from "react";
 import { AppContext } from "./providers";
-import { Check, Menu as MenuIcon, Monitor, Moon, Pen, SunDim } from "lucide-react";
+import {
+  Check,
+  Menu as MenuIcon,
+  Monitor,
+  Moon,
+  Pen,
+  SunDim,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
@@ -15,7 +22,7 @@ const menu = [
   {
     title: "View My Lawyers",
     icon: <Pen className="h-4 w-4" />,
-  }
+  },
 ];
 
 const appearances = [

@@ -13,7 +13,7 @@ export const AppContext = createContext<{
   setFont: Dispatch<SetStateAction<string>>;
 }>({
   font: "Default",
-  setFont: () => { },
+  setFont: () => {},
 });
 
 const ToasterProvider = () => {
@@ -41,9 +41,7 @@ export default function Providers({ children }: { children: ReactNode }) {
         }}
       >
         <ToasterProvider />
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
         <Analytics />
       </AppContext.Provider>
     </ThemeProvider>

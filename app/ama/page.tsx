@@ -107,8 +107,9 @@ const Chatbot = (props: any) => {
           <div key={index}>
             <div className="inline-flex  items-center">
               <span
-                className={`${chat.author === "user" ? "text-gray-400" : "text-gray-500"
-                  } inline-block rounded-lg p-2 text-base
+                className={`${
+                  chat.author === "user" ? "text-gray-400" : "text-gray-500"
+                } inline-block rounded-lg p-2 text-base
                 font-medium`}
               >
                 {chat.message}
@@ -134,7 +135,7 @@ const Chatbot = (props: any) => {
             onChange={(event) =>
               setInput(
                 event.target.value.charAt(0).toUpperCase() +
-                event.target.value.slice(1),
+                  event.target.value.slice(1),
               )
             }
             onKeyDown={handleKeyDown}
