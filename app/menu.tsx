@@ -9,6 +9,7 @@ import { useContext } from "react";
 import { AppContext } from "./providers";
 import {
   Check,
+  Home,
   Menu as MenuIcon,
   Monitor,
   Moon,
@@ -20,8 +21,14 @@ import Link from "next/link";
 
 const menu = [
   {
-    title: "View My Lawyers",
+    title: "Home",
+    icon: <Home className="h-4 w-4" />,
+    route: "/",
+  },
+  {
+    title: "Dashboard",
     icon: <Pen className="h-4 w-4" />,
+    route: "/dashboard",
   },
 ];
 
@@ -51,10 +58,10 @@ export default function Menu() {
       <PopoverContent className="w-52 divide-y divide-stone-200" align="end">
         <div className="p-2">
           <p className="p-2 text-xs font-medium text-stone-500">Lawyers</p>
-          {menu.map(({ title, icon }) => (
+          {menu.map(({ title, icon, route }) => (
             <Link
               key={title}
-              href="/dashboard"
+              href={route}
               className="flex w-full items-center justify-between rounded px-2 py-1 text-sm text-stone-600 hover:bg-stone-100"
             >
               <div className="flex items-center space-x-2">

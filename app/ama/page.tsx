@@ -98,18 +98,14 @@ const Chatbot = (props: any) => {
   }, [chats]);
 
   return (
-    <div className="mb-20 mt-8 h-full">
-      <div className="mb-4 flex items-center justify-center">
-        <h1 className="text-xl font-bold">Lawyers</h1>
-      </div>
-      <div ref={chatContainerRef} className="mx-auto w-[70%]">
+    <div className="mt-8 ">
+      <div ref={chatContainerRef} className="h-[70vh] mx-auto w-[70%]">
         {chats.map((chat, index) => (
           <div key={index}>
-            <div className="inline-flex  items-center">
+            <div className="inline-flex w-full bg-stone-50 p-2 rounded mb-4 items-center">
               <span
-                className={`${
-                  chat.author === "user" ? "text-gray-400" : "text-gray-500"
-                } inline-block rounded-lg p-2 text-base
+                className={`${chat.author === "user" ? "text-gray-400" : "text-gray-500"
+                  } inline-block rounded-lg p-2 text-base
                 font-medium`}
               >
                 {chat.message}
@@ -135,7 +131,7 @@ const Chatbot = (props: any) => {
             onChange={(event) =>
               setInput(
                 event.target.value.charAt(0).toUpperCase() +
-                  event.target.value.slice(1),
+                event.target.value.slice(1),
               )
             }
             onKeyDown={handleKeyDown}
