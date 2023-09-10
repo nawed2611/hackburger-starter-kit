@@ -1,6 +1,13 @@
 {
   "name": "hackburger",
   "version": "0.1.2",
+  "keywords": [
+    "nextjs",
+    "hackathon starter kit",
+    "tailwindcss",
+    "typescript",
+    "nextjs template"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
