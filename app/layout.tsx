@@ -7,9 +7,9 @@ import { ReactNode } from "react";
 import Providers from "./providers";
 import { ClerkProvider } from "@clerk/nextjs";
 
-const title = "Lawyers - a legal marketplace with AI-powered autocompletions";
+const title = "Hackburger - hackathon starter kit for Next.js";
 const description =
-  "Lawyers is a legal marketplace with AI-powered autocompletions. Built with Tiptap, OpenAI, and Vercel AI SDK.";
+  "Hackburger is a hackathon starter kit for Next.js with TypeScript, Tailwind CSS, and more.";
 
 export const metadata: Metadata = {
   title,

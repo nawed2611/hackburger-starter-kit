@@ -5,8 +5,6 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from "@/ui/primitives/popover";
-import { useContext } from "react";
-import { AppContext } from "./providers";
 import {
   Check,
   Home,
@@ -57,7 +55,9 @@ export default function Menu() {
       </PopoverTrigger>
       <PopoverContent className="w-52 divide-y divide-stone-200" align="end">
         <div className="p-2">
-          <p className="p-2 text-xs font-medium text-stone-500">Lawyers</p>
+          <p className="p-2 text-xs font-medium text-stone-500">
+            Hackburger Starter Kit
+          </p>
           {menu.map(({ title, icon, route }) => (
             <Link
               key={title}

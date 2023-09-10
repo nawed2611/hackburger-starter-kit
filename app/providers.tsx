@@ -4,9 +4,6 @@ import { Dispatch, ReactNode, SetStateAction, createContext } from "react";
 import { ThemeProvider, useTheme } from "next-themes";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
-import { ClerkProvider } from "@clerk/nextjs";
-import useLocalStorage from "@/lib/hooks/use-local-storage";
-import { cn } from "@/lib/utils";
 
 export const AppContext = createContext<{
   font: string;
@@ -24,8 +21,6 @@ const ToasterProvider = () => {
 };
 
 export default function Providers({ children }: { children: ReactNode }) {
-  const [font, setFont] = useLocalStorage<string>("novel__font", "Default");
-
   return (
     <ThemeProvider
       attribute="class"
@@ -34,16 +29,9 @@ export default function Providers({ children }: { children: ReactNode }) {
         dark: "dark-theme",
       }}
     >
-      <AppContext.Provider
-        value={{
-          font,
-          setFont,
-        }}
-      >
-        <ToasterProvider />
-        <div>{children}</div>
-        <Analytics />
-      </AppContext.Provider>
+      <ToasterProvider />
+      <div>{children}</div>
+      <Analytics />
     </ThemeProvider>
   );
 }

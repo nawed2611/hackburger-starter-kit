@@ -22,17 +22,11 @@ const data = [
     icon: <LayoutDashboard className="h-6 w-6" />,
     route: "/dashboard",
   },
-  {
-    id: 3,
-    title: "AMA",
-    icon: <Bot className="h-6 w-6" />,
-    route: "/ama",
-  },
 ];
 
 const Sidebar = () => {
   return (
-    <div className={`m-6 w-1/6 rounded-lg bg-stone-50 transition-opacity`}>
+    <div className={`m-6 w-1/6 rounded-lg border transition-opacity`}>
       <ul className={`m-6`}>
         {data.map((item: any) => (
           <Link
