@@ -1,6 +1,6 @@
 {
   "name": "create-hackburger",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Hackathon starter kit with Next.js, TailwindCSS, TypeScript, and more.",
   "keywords": [
     "nextjs",
