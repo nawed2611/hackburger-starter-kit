@@ -14,6 +14,9 @@
     "type": "git",
     "url": "https://github.com/nawed2611/hackburger-starter-kit"
   },
+  "bin": {
+    "create-hackburger": "./script.js"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
