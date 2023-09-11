@@ -32,7 +32,6 @@ fs.writeFileSync(
 );
 
 // remove the template's package-lock.json and script.js
-fs.unlinkSync(path.join(projectDir, 'package-lock.json'));
 fs.unlinkSync(path.join(projectDir, 'script.js'));
 
 // remove figlet in dependencies
