@@ -39,10 +39,29 @@ const Chatbot = () => {
         message: input,
       }),
     })
-      .then(response => {
+      .then(async response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
+
+        const data = response.body;
+
+        const reader = data.getReader();
+        const decoder = new TextDecoder();
+
+        let done = false;
+
+        let newChatOutput = "";
+
+        while (!done) {
+          const { value, done: doneReading } = await reader.read();
+          done = doneReading;
+          const chunkValue = decoder.decode(value);
+          newChatOutput = newChatOutput + chunkValue;
+          setChats([...chats, { message: newChatOutput, author: 'bot' }]);
+        }
+        setInput("");
+        setLoading(false);
       })
       .catch(error => {
         console.error(error);
