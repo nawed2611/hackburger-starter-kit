@@ -3,7 +3,7 @@ import Navbar from "@/ui/navbar";
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Loader2 } from 'lucide-react';
-import { useUser } from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/nextjs";
 import { useCompletion } from "ai/react";
 import { toast } from "sonner";
 
@@ -45,7 +45,6 @@ const Chatbot = () => {
         }
 
         const data = response.body;
-
         const reader = data.getReader();
         const decoder = new TextDecoder();
 
@@ -53,12 +52,14 @@ const Chatbot = () => {
 
         let newChatOutput = "";
 
+        const prevChats = [...chats];
+
         while (!done) {
           const { value, done: doneReading } = await reader.read();
           done = doneReading;
           const chunkValue = decoder.decode(value);
           newChatOutput = newChatOutput + chunkValue;
-          setChats([...chats, { message: newChatOutput, author: 'bot' }]);
+          setChats([...prevChats, { message: newChatOutput, author: 'bot' }]);
         }
         setInput("");
         setLoading(false);
@@ -70,10 +71,10 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="border p-4 w-1/2 mx-auto">
+    <div className="p-4 w-3/4 bg-zinc-800 rounded mx-auto">
       <div
         ref={chatContainerRef}
-        className="mx-2 mt-2 h-[70vh] overflow-y-auto shadow"
+        className="mx-2 mt-2 h-[65vh] overflow-y-auto shadow"
       >
         {chats.map((chat, index) => (
           <div
