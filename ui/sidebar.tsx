@@ -26,7 +26,7 @@ const data = [
 
 const Sidebar = () => {
   return (
-    <div className={`m-6 w-1/6 rounded-lg border transition-opacity`}>
+    <div className={`m-6 w-1/6 rounded-lg transition-opacity`}>
       <ul className={`m-6`}>
         {data.map((item: any) => (
           <Link

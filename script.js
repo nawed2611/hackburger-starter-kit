@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 // Usage: npx create-my-template my-app
-
 const spawn = require('cross-spawn');
 const fs = require('fs');
 const path = require('path');
@@ -41,7 +40,7 @@ delete projectPackageJson.dependencies.figlet;
 // the dependencies. We are using a third-party library
 // called `cross-spawn` for cross-platform support.
 // (Node has issues spawning child processes in Windows).
-spawn.sync('npm', ['install'], { stdio: 'inherit' });
+spawn.sync('pnpm', ['i'], { stdio: 'inherit' });
 
 figlet.text("Hackburger!!", {
     font: "Cyberlarge",
